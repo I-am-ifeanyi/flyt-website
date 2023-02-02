@@ -2,6 +2,7 @@ import weatherApp from "../images/weather-app.webp";
 import theTypeTest from "../images/theTypeTest.png";
 import nuelC from "../images/nuelC.png";
 import flytMovie from "../images/flytMovie.png";
+import amwe from "../images/amwe.png"
 
 
 const info = [
@@ -23,7 +24,7 @@ const info = [
     id: 1,
     name: "Nuel Concept",
     description1:
-      "This is an Architecture website for a friend, typically displays his methods, skills and some of his portfolios.",
+      "This is an Architecture website for a client, typically displays his methods, skills and some of his portfolios.",
     description2: "Architecture, Construction and Designs",
     image: nuelC,
     stack1: "ReactJS",
@@ -32,8 +33,22 @@ const info = [
     source: "https://github.com/I-am-ifeanyi/nuel-architecture.git",
     demo: "https://genuine-caramel-3baf50.netlify.app/",
   },
+
   {
     id: 2,
+    name: "All-Africa & Wellness Expo",
+    description1:
+      " All-Africa Medical & Wellness Expo is a platform that brings together a large network of the World Finest Healthcare Service Providers",
+    description2: "Healthcare & Medical Networking",
+    image: amwe,
+    stack1: "ReactJS",
+    stack2: "javaScript",
+    stack3: "Figma Design",
+    source: "",
+    demo: "http://amwe.com.ng",
+  },
+  {
+    id: 3,
     name: "The TypeTest",
     description1:
       "This is a typing game that demonstrates how fast you can type into the text area. You think you can type really fast? set your time with the plus (+) sign first, then hit the start button to proceed",

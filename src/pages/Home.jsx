@@ -1,6 +1,8 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import locomotiveScroll from "locomotive-scroll";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 import Sliders from "../components/Sliders";
 
@@ -8,10 +10,10 @@ import "react-slideshow-image/dist/styles.css";
 import { Slide } from "react-slideshow-image";
 
 import { GiArchiveResearch, GiDiscussion, GiTeamIdea } from "react-icons/gi";
-import { AiOutlineBuild } from "react-icons/ai"
+import { AiOutlineBuild } from "react-icons/ai";
 
 import Projects from "../components/Projects";
-
+import FormPage from "../components/FormPage";
 
 const Home = () => {
   const style = {
@@ -37,20 +39,34 @@ const Home = () => {
     >
       <div className="flex flex-col md:flex-row gap-20 justify-around items-center p-5">
         <div className="w-full md:w-1/2 flex flex-col">
-          <h1 className="font-bold text-center -mb-5 text-[2.5em] md:text-[3.2em]" >
+          <h1
+            className="font-bold text-center -mb-5 text-[2.5em] md:text-[3.2em]"
+            data-scroll
+            data-scroll-speed="1"
+          >
             Creating Digital{" "}
             <span className="text-green-700 text-[3.8rem]">Products</span> That
             Adds Value
           </h1>
-          <img src="openHand.png" alt="" className="w-full h-32" />
-          <p className="mt-5">
+          <img
+            src="openHand.png"
+            alt=""
+            className="w-full h-32"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          />
+          <p className="mt-5" data-scroll data-scroll-speed="2">
             <span className="font-bold">Fly Technology (FlyT)</span> is majorly
             concerned with building digital products and services that drives
             and sustains business growth. We are more than ready and skilled to
             help you develop the digital tools, products and services that
             creates the needed positive acceleration of your business.
           </p>
-          <button className=" text-gray-200 bg-green-700 leading-tight px-5 py-3 rounded-lg mt-5 md:w-1/2">
+          <button
+            className=" text-gray-200 bg-green-700 leading-tight px-5 py-3 rounded-lg mt-5 md:w-1/2"
+            data-scroll
+            data-scroll-speed="3"
+          >
             Book an appointment
           </button>
         </div>
@@ -62,11 +78,21 @@ const Home = () => {
         </div>
       </div>
       <div className="bg-green-50">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-10 p-5">
-          <h1 className="md:w-1/2 font-semibold">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-10 p-5 md:px-10">
+          <h1
+            className="md:w-1/2 font-semibold"
+            data-scroll
+            data-scroll-speed="1"
+            data-scroll-direction="horizontal"
+          >
             We are a dedicated department of your team.
           </h1>
-          <p className="md:w-1/2">
+          <p
+            className="md:w-1/2"
+            data-scroll
+            data-scroll-speed="-1"
+            data-scroll-direction="horizontal"
+          >
             Software products, tools and services that propels your business
             should never be a thing you worry about, and this is because it is
             our duty and expertise to design, build and deploy these
@@ -127,10 +153,37 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div>
-        <h1 className="text-center">Recent Projects</h1>
+      <div className="bg-[#121212] text-gray-200 py-5 md:px-10 px-5">
+        <h1 className="md:text-center mb-10">Recent Projects</h1>
         <Projects />
+      </div>
+      <div>
+        <div className="flex flex-col md:flex-row justify-around items-center">
+          <figure className="md:w-1/3 w-[80%]">
+            <img src="techpic.jpeg" alt="" className="rounded-xl" />
+            <figcaption className="md:w-1/3 w-3/4 bg-gray-200 text-center p-2 rounded-xl -mt-28 md:-mt-52 md:-ml-16 -ml-10 relative z-50">
+              <span className="text-3xl font-semibold">40%</span>
+              <br />
+              More affordable than in-house developers
+            </figcaption>
+          </figure>
+          <div className="md:w-1/3 p-5">
+            <h1 className="text-4xl font-bold my-5">Are we mission driven?</h1>
+            <p>
+              We are absolutely mission driven. We dive into your project once
+              we have established a clear picture and path of what we set to
+              achieve. Moreso, time is absolutely essential to what we do,
+              therefore, we do everything possible to keep to time.
+            </p>
+            <p>
+              We help new and existing businesses save money by providing
+              software dev. as a service - SDASS, skipping the time and money
+              spent on setting up an in house development team.
+            </p>
+          </div>
         </div>
+      </div>
+      <FormPage />
     </div>
   );
 };

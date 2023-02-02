@@ -1,5 +1,9 @@
 import React, { useContext } from "react";
 import { myContextApi } from "./ContextApi";
+import AOS from "aos";
+
+import "aos/dist/aos.css";
+AOS.init();
 
 import { GiHamburgerMenu } from "react-icons/gi"
 import {AiOutlineClose} from "react-icons/ai"
@@ -27,6 +31,7 @@ const Header = () => {
         className={`${
           showNavlinks ? "flex" : "hidden"
         } md:flex w-full md:w-auto bg-[#1a1a1a] md:bg-transparent  md:flex-row list-none gap-8 text-lg font-normal justify-between p-5 md:p-0 pb-10 md:h-auto`}
+        
       >
         <ul
           className={`${
@@ -45,9 +50,11 @@ const Header = () => {
           <li className="md:hover:border-b border-green-700 transition-all duration-400">
             Contact
           </li>
-        {showNavlinks && <button className="text-gray-800 bg-gray-200 leading-tight p-3 font-bold rounded-t-lg">
-        Book an appointment
-        </button>}
+          {showNavlinks && (
+            <button className="text-gray-800 bg-gray-200 leading-tight p-3 font-bold rounded-t-lg">
+              Book an appointment
+            </button>
+          )}
         </ul>
         <AiOutlineClose
           size={40}
