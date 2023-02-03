@@ -9,7 +9,7 @@ import { AiFillGithub, AiOutlineDeliveredProcedure } from "react-icons/ai";
 const Projects = () => {
    
   return (
-    <div>
+    <div id="projects">
       {info.map((project) => {
         return (
           <div

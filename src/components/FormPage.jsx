@@ -7,17 +7,16 @@ const FormPage = () => {
     text: " ",
   });
 
-    const formHandler = (e) => {
-        setFormInputs((formInputs) => ({
-            ...formInputs,
-            [e.target.name] : e.target.value
-        }))
-    }
-    const preventD = (e) => {
-        e.preventDefault()
-            console.log(formInputs);
-
-    }
+  const formHandler = (e) => {
+    setFormInputs((formInputs) => ({
+      ...formInputs,
+      [e.target.name]: e.target.value,
+    }));
+  };
+  const preventD = (e) => {
+    e.preventDefault();
+    console.log(formInputs);
+  };
   return (
     <div className="flex flex-col md:flex-row items-center justify-around md:py-10 py-4 bg-[#121212] text-gray-200 w-[90%] relative m-auto rounded-t-2xl mt-20 shadow-2xl ">
       <div className="md:w-1/3 p-5">
@@ -35,8 +34,8 @@ const FormPage = () => {
           <div className="flex flex-col md:flex-row gap-5">
             <fieldset className="flex flex-col gap-5 text-gray-800">
               <input
-                              type="text"
-                              placeholder="Your Name"
+                type="text"
+                placeholder="Your Name"
                 value={formInputs.name}
                 name="name"
                 required
