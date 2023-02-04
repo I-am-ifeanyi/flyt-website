@@ -7,8 +7,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 
-import { GiHamburgerMenu } from "react-icons/gi"
-import {AiOutlineClose} from "react-icons/ai"
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Header = () => {
   const { showNavlinks, toggleNavlinks } = useContext(myContextApi);
@@ -60,9 +60,8 @@ const Header = () => {
           <li
             className="md:hover:border-b border-green-700 transition-all duration-400"
             onClick={toggleNavlinks}
-          ><a href="#projects">
-              Projects
-              </a>
+          >
+            <a href="#projects">Projects</a>
           </li>
           <Link to="contact">
             <li
@@ -72,16 +71,17 @@ const Header = () => {
               Contact
             </li>
           </Link>
-         
         </ul>
         <AiOutlineClose
           size={40}
           className="text-gray-200 md:hidden"
           onClick={toggleNavlinks}
         />
-      </nav>
+      </nav>{" "}
       <button className="hidden md:block text-gray-200 bg-[#1a1a1a] leading-tight px-5 py-2 rounded-lg">
-        Book an <br /> appointment
+        <Link to="appointment">
+          Book an <br /> appointment{" "}
+        </Link>
       </button>
     </header>
   );

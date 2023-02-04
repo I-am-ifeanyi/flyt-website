@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+
+import { Link } from "react-router-dom";
 import locomotiveScroll from "locomotive-scroll";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -67,7 +69,8 @@ const Home = () => {
             data-scroll
             data-scroll-speed="3"
           >
-            Book an appointment
+                    <Link to="appointment">
+Book an appointment</Link>
           </button>
         </div>
         <div className="md:w-[350px] md:rotate-6 hidden md:block" style={style}>

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 const FormPage = () => {
   const [formInputs, setFormInputs] = useState({
-    name: " ",
-    email: " ",
-    text: " ",
+    name: "",
+    email: "",
+    text: "",
   });
 
   const formHandler = (e) => {
