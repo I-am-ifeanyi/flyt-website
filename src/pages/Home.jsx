@@ -69,8 +69,7 @@ const Home = () => {
             data-scroll
             data-scroll-speed="3"
           >
-                    <Link to="appointment">
-Book an appointment</Link>
+            <Link to="appointment">Book an appointment</Link>
           </button>
         </div>
         <div className="md:w-[350px] md:rotate-6 hidden md:block" style={style}>
@@ -160,17 +159,21 @@ Book an appointment</Link>
         <h1 className="md:text-center mb-10">Recent Projects</h1>
         <Projects />
       </div>
-      <div>
+      <div className="bg-[url(bg.png)] h-[50em] max-h-[100em] flex items-center justify-center">
         <div className="flex flex-col md:flex-row justify-around items-center">
           <figure className="md:w-1/3 w-[80%]">
-            <img src="techpic.jpeg" alt="" className="rounded-xl" />
-            <figcaption className="md:w-1/3 w-3/4 bg-gray-200 text-center p-2 rounded-xl -mt-28 md:-mt-52 md:-ml-16 -ml-10 relative z-50">
+            <img
+              src="techpic.jpeg"
+              alt=""
+              className="rounded-xl rotate-6 h-[400px] md:h-auto"
+            />
+            <figcaption className="md:w-1/3 w-3/4 bg-gray-200 text-center md:p-2 p-1 rounded-xl -mt-28 md:-mt-52 md:-ml-16 -ml-10 relative z-50">
               <span className="text-3xl font-semibold">40%</span>
               <br />
               More affordable than in-house developers
             </figcaption>
           </figure>
-          <div className="md:w-1/3 p-5">
+          <div className="md:w-1/3 p-5 text-gray-100 bg-[url(lamp.png)]">
             <h1 className="text-4xl font-bold my-5">Are we mission driven?</h1>
             <p>
               We are absolutely mission driven. We dive into your project once

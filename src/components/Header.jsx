@@ -34,7 +34,9 @@ const Header = () => {
       <nav
         className={`${
           showNavlinks ? "flex" : "hidden"
-        } md:flex w-full md:w-auto bg-[#1a1a1a] md:bg-transparent  md:flex-row list-none gap-8 text-lg font-normal justify-between p-5 md:p-0 pb-10 md:h-auto`}
+        } md:flex w-full md:w-auto bg-[#1a1a1a] md:bg-transparent  md:flex-row list-none gap-8 text-lg font-normal justify-between p-5 md:p-0 pb-10 md:h-auto border-b-4 border-green-700 md:border-none`}
+        data-aos="fade-left"
+        data-aos-duration="2000"
       >
         <ul
           className={`${
