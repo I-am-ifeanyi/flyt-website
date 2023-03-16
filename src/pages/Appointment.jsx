@@ -116,11 +116,11 @@ const Appointment = () => {
               onChange={handleOnchange}
             />
           </fieldset>
-          <div className="flex flex-col md:flex-row mt-4 md:mt-0">
+          <div className="flex flex-col md:flex-row mt-4 md:mt-0 ">
             <label className="mr-3 flex items-center md:w-[15%]">
               Select Time:
             </label>
-            <div className="grid grid-cols-2 md:grid-cols-3 md:gap-1 gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-3 md:gap-1 gap-2 md:w-1/2">
               <label className="flex gap-2 items-center bg-green-700 p-2 rounded hover:bg-green-900">
                 {" "}
                 <input
