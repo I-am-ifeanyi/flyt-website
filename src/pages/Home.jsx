@@ -93,7 +93,7 @@ const Home = () => {
       <div className="flex flex-col md:flex-row gap-20 justify-around items-center p-5">
         <div className="w-full md:w-1/2 flex flex-col">
           <h1
-            className="font-bold text-center -mb-5 text-[2.5em] md:text-[3.2em]"
+            className="font-bold text-center -mb-4 text-[2.5em] md:text-[3.2em]"
             ref={mainCaption}
           >
             Creating Digital{" "}
@@ -105,7 +105,7 @@ const Home = () => {
           <img
             src="openHand.png"
             alt=""
-            className="w-full h-32"
+            className="w-full h-32 mt-3"
             ref={handIcon}
           />
           <p className="mt-5">

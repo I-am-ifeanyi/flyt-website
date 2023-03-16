@@ -45,7 +45,7 @@ const Header = () => {
         <figure
           className={`${
             showNavlinks ? "hidden" : "flex"
-          } md:flex w-[80px] h-[50px] items-center gap-1 underline underline-offset-4 decoration-green-700 m-5 md:m-0`}
+          } md:flex w-[80px] h-[50px] items-center gap-1 underline underline-offset-4 decoration-green-700 m-2 md:m-0`}
         >
           <img src="flytLogo.png" alt="FlyT Logo" className="w-full" />
           <figcaption className="text-xl text-green-700">
@@ -58,7 +58,7 @@ const Header = () => {
         size={40}
         className={`${
           showNavlinks ? "hidden" : "block"
-        } md:hidden text-green-700 m-5 md:m-0`}
+        } md:hidden text-green-700 m-2 md:m-0`}
       />
       <nav
         className={`${

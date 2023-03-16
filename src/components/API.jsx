@@ -71,6 +71,7 @@ const info = [
     description2: "This is a fun project!.",
     image: theTypeTest,
     stack1: "ReactJS",
+    stack2: "javaScript",
     source: "https://github.com/I-am-ifeanyi/practice.git",
     demo: "https://flyt-typing-game.netlify.app/",
   },
