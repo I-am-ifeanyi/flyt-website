@@ -27,6 +27,20 @@ const Home = () => {
     backgroundSize: "cover",
   };
 
+  const style2 = {
+    backgroundImage: `url('bg.png')`,
+
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+  };
+   const style3 = {
+     backgroundImage: `url('lamp.png')`,
+
+     backgroundPosition: "center",
+     backgroundSize: "cover",
+   };
+
+
   const mainCaption = useRef(null);
   const product = useRef(null);
   const handIcon = useRef(null);
@@ -182,7 +196,10 @@ const Home = () => {
         <h1 className="md:text-center mb-10">Recent Projects</h1>
         <Projects />
       </div>
-      <div className="bg-[url(bg.png)] h-[50em] max-h-[100em] flex items-center justify-center">
+      <div
+        className="h-[50em] max-h-[100em] flex items-center justify-center"
+        style={style2}
+      >
         <div className="flex flex-col md:flex-row justify-around items-center">
           <figure className="md:w-1/3 w-[80%]">
             <img
@@ -196,7 +213,7 @@ const Home = () => {
               More affordable than in-house developers
             </figcaption>
           </figure>
-          <div className="md:w-1/3 p-5 text-gray-100 bg-[url(lamp.png)]">
+          <div className="md:w-1/3 p-5 text-gray-100 " style={style3}>
             <h1 className="text-4xl font-bold my-5">Are we mission driven?</h1>
             <p>
               We are absolutely mission driven. We dive into your project once
