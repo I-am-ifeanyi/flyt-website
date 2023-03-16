@@ -1,13 +1,8 @@
 import React, { useEffect, useRef } from "react";
 
 import { gsap } from "gsap";
-import { Flip } from "gsap/Flip";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Observer } from "gsap/Observer";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { Draggable } from "gsap/Draggable";
-import { EaselPlugin } from "gsap/EaselPlugin";
-import { TextPlugin } from "gsap/TextPlugin";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,8 +30,6 @@ const Home = () => {
   const mainCaption = useRef(null);
   const product = useRef(null);
   const handIcon = useRef(null);
-  const left = useRef(null);
-  const right = useRef(null);
 
   useEffect(() => {
     if (mainCaption.current) {
@@ -76,6 +69,10 @@ const Home = () => {
       }
     );
   }, [mainCaption, product]);
+
+   useEffect(() => {
+     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+   }, []);
 
   return (
     <div className="tracking-wider flex flex-col gap-20">

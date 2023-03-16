@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+
 
 const FormPage = () => {
   const [formInputs, setFormInputs] = useState({
@@ -6,7 +8,7 @@ const FormPage = () => {
     email: "",
     text: "",
   });
-
+const {name, email, text} = formInputs
   const formHandler = (e) => {
     setFormInputs((formInputs) => ({
       ...formInputs,
@@ -16,6 +18,21 @@ const FormPage = () => {
   const preventD = (e) => {
     e.preventDefault();
     console.log(formInputs);
+     emailjs
+       .send(
+         "service_60dxvag",
+         "template_otswcbe",
+         formInputs,
+         "_4beOXByxwbLf94mJ"
+       )
+       .then(
+         function (response) {
+           console.log("SUCCESS!", response.status, response.text);
+         },
+         function (error) {
+           console.log("FAILED...", error);
+         }
+       );
   };
   return (
     <div className="flex flex-col md:flex-row items-center justify-around md:py-10 py-4 bg-[#121212] text-gray-200 w-[90%] relative m-auto rounded-t-2xl mt-20 shadow-2xl ">
@@ -36,7 +53,7 @@ const FormPage = () => {
               <input
                 type="text"
                 placeholder="Your Name"
-                value={formInputs.name}
+                value={name}
                 name="name"
                 required
                 className="rounded-lg p-2 text-sm"
@@ -45,21 +62,21 @@ const FormPage = () => {
               <input
                 type="email"
                 placeholder="Your Email"
-                value={formInputs.email}
+                value={email}
                 name="email"
                 required
                 className="rounded-lg p-2 text-sm"
                 onChange={formHandler}
               />
             </fieldset>
-            <input
-              type="text"
+            <textarea
               placeholder="Please describe your project details here ..."
-              value={formInputs.text}
+              value={text}
               name="text"
               required
-              className="w-[300px] rounded-lg text-gray-800 p-2 text-sm h-52 md:h-auto"
+              className="w-[300px] rounded-lg text-gray-800 p-2 text-sm h-52 md:h-auto resize-none"
               onChange={formHandler}
+              
             />
           </div>
           <button

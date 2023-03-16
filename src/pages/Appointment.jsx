@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
+
+import emailjs from "@emailjs/browser";
+
 
 
 
@@ -14,7 +17,7 @@ const Appointment = () => {
     time: "",
   });
 
-  const { date, email, company, time } = appointmentDetails;
+  const { fullName, email, company, time } = appointmentDetails;
 
   const handleOnchange = (e) => {
     const { name, value } = e.target;
@@ -26,21 +29,40 @@ const Appointment = () => {
     });
   };
 
+    const formSubmit = (e) => {
+      e.preventDefault();
+      setIsFormSubmitted(true);
+      setIsTimeSelected(time ? true : false);
+      if (!time) {
+        return false;
+      }
+      console.log(appointmentDetails);
+        emailjs
+          .send(
+            "service_60dxvag",
+            "template_m8cct19",
+            appointmentDetails,
+            "_4beOXByxwbLf94mJ"
+          )
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
+    };
+   useEffect(() => {
+     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+   }, [formSubmit]);
+
   return (
     <div>
       {!isFormSubmitted ? (
         <form
           className="md:w-2/3 relative m-auto bg-gray-800 text-gray-200 p-5 md:p-10 flex flex-col md:gap-5 md:rounded-t-lg"
-          onSubmit={(e) => {
-            e.preventDefault();
-
-            setIsFormSubmitted(true);
-            setIsTimeSelected(time ? true : false);
-            if (!time) {
-              return false;
-            }
-            console.log(appointmentDetails);
-          }}
+          onSubmit={formSubmit}
         >
           <h2 className="text-2xl font-bold tracking-widest md:text-start text-center ">
             Book an appointment with us
@@ -61,7 +83,7 @@ const Appointment = () => {
               required
               className="p-2 rounded-lg text-black w md:w-1/2"
               name="fullName"
-              value={date}
+              value={fullName}
               onChange={handleOnchange}
             />
           </fieldset>
@@ -246,18 +268,16 @@ const Appointment = () => {
           </div>
           <div className="flex items-center">
             <div className="md:w-[15%] md:mr-3"></div>
-          <button
-            type="submit"
-            className="hover:text-gray-200 text-green-700 bg-gray-200 mt-4 py-2 rounded-lg hover:bg-green-900 hover:translate-x-1 font-bold transition-all duration-500 w-full md:w-1/2"
-          >
-            Submit
+            <button
+              type="submit"
+              className="hover:text-gray-200 text-green-700 bg-gray-200 mt-4 py-2 rounded-lg hover:bg-green-900 hover:translate-x-1 font-bold transition-all duration-500 w-full md:w-1/2"
+            >
+              Submit
             </button>
-            </div>
+          </div>
         </form>
       ) : (
-        <div
-          className="flex flex-row items-center bg-green-700 text-gray-200 p-4 justify-center my-20 md:w-2/3 relative m-auto"
-        >
+        <div className="flex flex-row items-center bg-green-700 text-gray-200 p-4 justify-center my-20 md:w-2/3 relative m-auto">
           <figure className="w-1/3">
             <img src="cartoon.png" alt="" />
           </figure>

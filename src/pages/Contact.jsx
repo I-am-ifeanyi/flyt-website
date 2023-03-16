@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-
+import emailjs from "@emailjs/browser";
 
 import {
   AiOutlineMail,
@@ -29,6 +28,39 @@ const Contact = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  const formSubmit = (e) => {
+    e.preventDefault();
+    setFormData({
+      name: "",
+      email: "",
+      company: "",
+      budget: "",
+      details: "",
+    });
+    setIsFormSubmitted(true);
+    console.log(formData);
+
+    emailjs
+      .send(
+        "service_60dxvag",
+        "template_otswcbe",
+        formData,
+        "_4beOXByxwbLf94mJ"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+  };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [formSubmit]);
 
   return (
     <div>
@@ -82,18 +114,7 @@ const Contact = () => {
       {!isFormSubmitted ? (
         <form
           className="md:w-2/3 relative m-auto my-20 bg-gray-800 text-gray-200 p-5 md:p-10 flex flex-col md:gap-5 md:rounded-t-lg"
-          onSubmit={(e) => {
-            e.preventDefault();
-            setFormData({
-              name: "",
-              email: "",
-              company: "",
-              budget: "",
-              details: "",
-            });
-            setIsFormSubmitted(true);
-            console.log(formData);
-          }}
+          onSubmit={formSubmit}
         >
           <h2 className="text-2xl font-bold tracking-widest md:text-start text-center ">
             Get a quick estimate
@@ -135,7 +156,7 @@ const Contact = () => {
             />
             <input
               type="number"
-              placeholder="Budget"
+              placeholder="Budget (In US Dollars)"
               required
               className="p-2 rounded-lg text-black"
               name="budget"
@@ -158,9 +179,7 @@ const Contact = () => {
           </button>
         </form>
       ) : (
-        <div
-          className="flex flex-row items-center bg-green-700 text-gray-200 p-4 justify-center my-20"
-        >
+        <div className="flex flex-row items-center bg-green-700 text-gray-200 p-4 justify-center my-20">
           <figure className="w-1/3">
             <img src="cartoon.png" alt="" />
           </figure>
