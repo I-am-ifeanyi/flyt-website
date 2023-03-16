@@ -21,28 +21,28 @@ const Projects = () => {
               <div className="flex flex-col md:flex-row gap-2 justify-around font-bold rounded my-4 text-green-700 md:bg-gray-200 md:border-l-4 md:border-green-700">
                 {" "}
                 <p
-                  className={`bg-gray-200 border-l-4 border-green-700 pl-2 w-1/3 md:bg-none md:border-l-0 md:pl-0 md:w-auto md:border-transparent ${
+                  className={`bg-gray-200 border-l-4 border-green-700 pl-2 w-1/2 md:bg-none md:border-l-0 md:pl-0 md:w-auto md:border-transparent ${
                     project.stack1 ? "block" : "hidden"
                   }`}
                 >
                   {project.stack1}
                 </p>
                 <p
-                  className={`bg-gray-200 border-l-4 border-green-700 pl-2 w-1/3 md:bg-none md:border-l-0 md:pl-0 md:w-auto md:border-transparent ${
+                  className={`bg-gray-200 border-l-4 border-green-700 pl-2 w-1/2 md:bg-none md:border-l-0 md:pl-0 md:w-auto md:border-transparent ${
                     project.stack2 ? "block" : "hidden"
                   }`}
                 >
                   {project.stack2}
                 </p>
                 <p
-                  className={`bg-gray-200 border-l-4 border-green-700 pl-2 w-1/3 md:bg-none md:border-l-0 md:pl-0 md:w-auto md:border-transparent ${
+                  className={`bg-gray-200 border-l-4 border-green-700 pl-2 w-1/2 md:bg-none md:border-l-0 md:pl-0 md:w-auto md:border-transparent ${
                     project.stack3 ? "block" : "hidden"
                   }`}
                 >
                   {project.stack3}
                 </p>
                 <p
-                  className={`bg-gray-200 border-l-4 border-green-700 pl-2 w-1/3 md:bg-none md:border-l-0 md:pl-0 md:w-auto md:border-transparent ${
+                  className={`bg-gray-200 border-l-4 border-green-700 pl-2 w-1/2 md:bg-none md:border-l-0 md:pl-0 md:w-auto md:border-transparent ${
                     project.stack4 ? "block" : "hidden"
                   }`}
                 >
