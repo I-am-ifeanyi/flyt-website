@@ -1,17 +1,44 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { myContextApi } from "./ContextApi";
-import AOS from "aos";
 
-import "aos/dist/aos.css";
-AOS.init();
+import { gsap } from "gsap";
+import { CSSPlugin } from "gsap/CSSPlugin";
+
+
+import { Flip } from "gsap/Flip";
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 
+gsap.registerPlugin(CSSPlugin);
+
+
 const Header = () => {
   const { showNavlinks, toggleNavlinks } = useContext(myContextApi);
+
+  const slideIn = useRef(null);
+  useEffect(() => {
+    gsap.fromTo(
+      slideIn.current,
+      {
+        duration: 0,
+        opacity: 0.2,
+        x: 200,
+        ease: "power1.out",
+      },
+      {
+        duration: 1,
+        opacity: 1,
+        x: 0,
+        ease: "power1.out",
+      }
+    );
+      
+  }, [slideIn, toggleNavlinks]);
+
+
   return (
     <header className="flex justify-between md:p-5 items-center font-semibold tracking-wider  z-50 top-0">
       <Link to="/">
@@ -21,7 +48,9 @@ const Header = () => {
           } md:flex w-[80px] h-[50px] items-center gap-1 underline underline-offset-4 decoration-green-700 m-5 md:m-0`}
         >
           <img src="flytLogo.png" alt="FlyT Logo" className="w-full" />
-          <figcaption className="text-xl text-green-700">FlyT</figcaption>
+          <figcaption className="text-xl text-green-700">
+            FlyT
+          </figcaption>
         </figure>
       </Link>
       <GiHamburgerMenu
@@ -35,7 +64,7 @@ const Header = () => {
         className={`${
           showNavlinks ? "flex" : "hidden"
         } md:flex w-full md:w-auto bg-[#1a1a1a] md:bg-transparent  md:flex-row list-none gap-8 text-lg font-normal justify-between p-5 md:p-0 pb-10 md:h-auto border-b-4 border-green-700 md:border-none`}
-       
+        ref={slideIn}
       >
         <ul
           className={`${

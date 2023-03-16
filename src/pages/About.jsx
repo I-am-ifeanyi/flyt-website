@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 
 import Sliders from "../components/Sliders";
-import locomotiveScroll from "locomotive-scroll";
 
 import "react-slideshow-image/dist/styles.css";
 import { Slide } from "react-slideshow-image";
@@ -12,22 +11,15 @@ import FormPage from '../components/FormPage';
 
 const About = () => {
     
-  const scrollRef = React.createRef();
-
-  useEffect(() => {
-    const scroll = new locomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-    });
-  });
+  
   return (
-    <div className="my-10 " ref={scrollRef}>
+    <div className="my-10 ">
       <div className="p-5 flex flex-col md:flex-row gap-10 justify-around items-center tracking-wider">
         <div className="md:w-1/2 flex flex-col gap-5">
-          <h1 className="underline" data-scroll data-scroll-speed="1">
+          <h1 className="underline">
             Start Building Today!
           </h1>
-          <p data-scroll data-scroll-speed="1">
+          <p>
             We are very passionate about Software Development with a
             demonstrated history of implementing programming knowledge and
             skills in the software industry. To solve programming problems, we
@@ -37,14 +29,12 @@ const About = () => {
             client to enable us get the full picture of what's required to do;
             we always deliver the best eventually.
           </p>
-          <p data-scroll data-scroll-speed="1">
+          <p>
             We focus on the core of your business and we would deliver the
             product, effectively and timely.
           </p>
           <div
             className="flex flex-col md:flex-row gap-4"
-            data-scroll
-            data-scroll-speed="1"
           >
             <button className="flex items-center gap-2 font-bold">
               <span className="text-4xl font-bold text-green-700">100%</span>
@@ -86,16 +76,16 @@ const About = () => {
             </figcaption>
           </figure>
           <div className="md:w-1/3 p-5">
-            <h1 className="text-4xl font-bold my-5" data-scroll data-scroll-speed="1">
+            <h1 className="text-4xl font-bold my-5">
               Are we mission driven?
             </h1>
-            <p data-scroll data-scroll-speed="1">
+            <p>
               We are absolutely mission driven. We dive into your project once
               we have established a clear picture and path of what we set to
               achieve. Moreso, time is absolutely essential to what we do,
               therefore, we do everything possible to keep to time.
             </p>
-            <p data-scroll data-scroll-speed="1">
+            <p>
               We help new and existing businesses save money by providing
               software dev. as a service - SDASS, skipping the time and money
               spent on setting up an in house development team.

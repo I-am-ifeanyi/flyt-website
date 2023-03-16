@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-AOS.init();
+
 
 import {
   AiOutlineMail,
@@ -83,7 +81,7 @@ const Contact = () => {
       </div>
       {!isFormSubmitted ? (
         <form
-          className="md:w-2/3 relative m-auto my-20 bg-gray-800 text-gray-200 p-5 md:p-10 flex flex-col md:gap-5 rounded-t-lg"
+          className="md:w-2/3 relative m-auto my-20 bg-gray-800 text-gray-200 p-5 md:p-10 flex flex-col md:gap-5 md:rounded-t-lg"
           onSubmit={(e) => {
             e.preventDefault();
             setFormData({
@@ -162,8 +160,6 @@ const Contact = () => {
       ) : (
         <div
           className="flex flex-row items-center bg-green-700 text-gray-200 p-4 justify-center my-20"
-          data-aos="fade-right"
-          data-aos-duration="2000"
         >
           <figure className="w-1/3">
             <img src="cartoon.png" alt="" />

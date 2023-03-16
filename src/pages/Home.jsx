@@ -1,10 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+
+import { gsap } from "gsap";
+import { Flip } from "gsap/Flip";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Observer } from "gsap/Observer";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { Draggable } from "gsap/Draggable";
+import { EaselPlugin } from "gsap/EaselPlugin";
+import { TextPlugin } from "gsap/TextPlugin";
+
+gsap.registerPlugin(ScrollTrigger);
 
 import { Link } from "react-router-dom";
-import locomotiveScroll from "locomotive-scroll";
-import AOS from "aos";
-import "aos/dist/aos.css";
-AOS.init();
 
 import Sliders from "../components/Sliders";
 
@@ -25,50 +32,79 @@ const Home = () => {
     backgroundSize: "cover",
   };
 
-  const scrollRef = React.createRef();
+  const mainCaption = useRef(null);
+  const product = useRef(null);
+  const handIcon = useRef(null);
+  const left = useRef(null);
+  const right = useRef(null);
 
   useEffect(() => {
-    const scroll = new locomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
+    if (mainCaption.current) {
+      gsap.to(mainCaption.current, {
+        color: "#8c0",
+        duration: 8,
+        delay: 6,
+        repeat: -1,
+        ease: "power1.inOut",
+      });
+    }
+    gsap.to(product.current, {
+      color: "#000081",
+      duration: 5,
+      delay: 10,
+      repeat: -1,
+      ease: "power1.inOut",
     });
-  });
+    gsap.fromTo(
+      handIcon.current,
+      {
+        duration: 3,
+        opacity: 0,
+        y: 200,
+        ease: "power1.out",
+        rotation: 180,
+        scale: 0.2,
+      },
+      {
+        duration: 2,
+        opacity: 1,
+        y: 0,
+        ease: "power1.out",
+        rotation: 360,
+        scale: 1,
+        
+      }
+    );
+  }, [mainCaption, product]);
 
   return (
-    <div
-      className="my-10 md:my-20 tracking-wider flex flex-col gap-20"
-      ref={scrollRef}
-    >
+    <div className="tracking-wider flex flex-col gap-20">
       <div className="flex flex-col md:flex-row gap-20 justify-around items-center p-5">
         <div className="w-full md:w-1/2 flex flex-col">
           <h1
             className="font-bold text-center -mb-5 text-[2.5em] md:text-[3.2em]"
-            data-scroll
-            data-scroll-speed="1"
+            ref={mainCaption}
           >
             Creating Digital{" "}
-            <span className="text-green-700 text-[3.8rem]">Products</span> That
-            Adds Value
+            <span className="text-green-700 text-[3.8rem]" ref={product}>
+              Products
+            </span>{" "}
+            That Adds Value
           </h1>
           <img
             src="openHand.png"
             alt=""
             className="w-full h-32"
-            data-aos="fade-up"
-            data-aos-duration="2000"
+            ref={handIcon}
           />
-          <p className="mt-5" data-scroll data-scroll-speed="2">
+          <p className="mt-5">
             <span className="font-bold">Fly Technology (FlyT)</span> is majorly
             concerned with building digital products and services that drives
             and sustains business growth. We are more than ready and skilled to
             help you develop the digital tools, products and services that
             creates the needed positive acceleration of your business.
           </p>
-          <button
-            className=" text-gray-200 bg-green-700 leading-tight px-5 py-3 rounded-lg mt-5 md:w-1/2"
-            data-scroll
-            data-scroll-speed="3"
-          >
+          <button className=" text-gray-200 bg-green-700 hover:bg-green-900 leading-tight px-5 py-3 rounded-lg mt-5 md:w-1/2">
             <Link to="appointment">Book an appointment</Link>
           </button>
         </div>
@@ -81,20 +117,10 @@ const Home = () => {
       </div>
       <div className="bg-green-50">
         <div className="flex flex-col md:flex-row justify-between items-center gap-10 p-5 md:px-10">
-          <h1
-            className="md:w-1/2 font-semibold"
-            data-scroll
-            data-scroll-speed="1"
-            data-scroll-direction="horizontal"
-          >
+          <h1 className="md:w-1/2 font-semibold">
             We are a dedicated department of your team.
           </h1>
-          <p
-            className="md:w-1/2"
-            data-scroll
-            data-scroll-speed="-1"
-            data-scroll-direction="horizontal"
-          >
+          <p className="md:w-1/2">
             Software products, tools and services that propels your business
             should never be a thing you worry about, and this is because it is
             our duty and expertise to design, build and deploy these

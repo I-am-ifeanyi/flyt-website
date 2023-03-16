@@ -17,12 +17,19 @@ const Projects = () => {
             key={project.id}
           >
             <div className="my-10 md:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold rounded my-2 text-green-700 bg-gray-200 p-2 w-auto border-r-4 border-green-700" >
+              <h2 className="text-3xl md:text-4xl font-bold rounded my-2 text-green-700 bg-gray-200 p-2 w-auto border-r-4 border-green-700">
                 {project.name}
               </h2>
               <i className="">{project.description2}</i>
               <p className="mt-5">{project.description1}</p>
-              <div className="mt-10 flex gap-20">
+              <div className="flex justify-around font-bold rounded my-4 text-green-700 bg-gray-200 border-l-4 border-green-700">
+                {" "}
+                <p>{project.stack1}</p>
+                <p>{project.stack2}</p>
+                <p>{project.stack3}</p>
+                <p>{project.stack4}</p>
+              </div>
+              <div className="flex gap-20">
                 <button className="underline md:hover:text-green-700 transition-all duration-500 md:hover:translate-x-1">
                   <a
                     href={project.source ? project.source : "#"}
