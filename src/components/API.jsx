@@ -49,9 +49,22 @@ const info = [
     source: "https://github.com/I-am-ifeanyi/nuel-architecture.git",
     demo: "https://genuine-caramel-3baf50.netlify.app/",
   },
-
   {
     id: 3,
+    name: "Weather App",
+    description1:
+      "A weather App that gives the current weather data of a selected location/city around the world. It also provides forcast for a  selected location/city at a 3 hourly interval. Particular attention was paid to the mobile view as that's what's obtainable from the Figma file.",
+    description2: "Limited Weather Information",
+    image: weatherApp,
+    stack1: "ReactJS",
+    stack2: "Figma Design",
+    stack3: "REST API",
+    source: "https://github.com/I-am-ifeanyi/flyt-weather",
+    demo: "https://flyt-weather.vercel.app/",
+  },
+
+  {
+    id: 4,
     name: "All-Africa Medical & Wellness Expo",
     description1:
       " All-Africa Medical & Wellness Expo is a platform that brings together a large network of the World Finest Healthcare Service Providers",
@@ -64,7 +77,7 @@ const info = [
     demo: "http://amwe.com.ng",
   },
   {
-    id: 4,
+    id: 5,
     name: "The TypeTest",
     description1:
       "This is a typing game that demonstrates how fast you can type into the text area. You think you can type really fast? set your time with the plus (+) sign first, then hit the start button to proceed",
@@ -74,19 +87,6 @@ const info = [
     stack2: "javaScript",
     source: "https://github.com/I-am-ifeanyi/practice.git",
     demo: "https://flyt-typing-game.netlify.app/",
-  },
-  {
-    id: 5,
-    name: "Weather App",
-    description1:
-      "This is a personal project I did to specifically perfect my consumption of APIs and I am proud of what I was able to achieve working on this project. Basically, the weather parameters or values I get on request is for the weather condition of Abuja, Nigeria. Similar projects will be made dynamic to allow the user choose a preferred location; with other desired features added.",
-    description2: "24/7 Weather Information",
-    image: weatherApp,
-    stack1: "ReactJS",
-    stack2: "Figma Design",
-    stack3: "Tommorrow.io REST API",
-    source: "https://github.com/I-am-ifeanyi/Weather-App.git",
-    demo: null,
   },
 ];
 
