@@ -4,24 +4,24 @@ import nuelC from "../images/nuelC.png";
 import flytMovie from "../images/flytMovie.png";
 import amwe from "../images/amwe.png"
 import myDoings from "../images/myDoings.png"
+import alemsC from "../images/alemsC.png"
 
 
 const info = [
   {
     id: 0,
-    name: "My Doings",
+    name: "Alems-C Engineering Contractors",
     description1:
-      "Because we all have very different and important tasks to do, we do everything possible not to skip or forget any of them. We built this TODO app to help you list the things that are important to you and at what date and time you intend to do these things. Highly efficient tool. Importantly, it has a feature to translate your todos (doings) to any major language you can think of.",
+      "We at ALEMS-C do not just see the field of Engineering as a common career, we see it as our own unique way of changing the world. We turn imaginations to realities through Engineering.",
     description2:
-      "A different kind of TODO app, with language translate feature",
-    image: myDoings,
+      "We're here to build your dreams, one project at a time.",
+    image: alemsC,
     stack1: "ReactJS",
-    stack2: "TypeScript",
-    stack3: "REST API",
-    stack4: "Figma Design",
-    source: "https://github.com/I-am-ifeanyi/Todo-List-App",
-    demo: "https://mydoingsapp.netlify.app/#/",
+    stack2: "Figma Design",
+    source: "https://github.com/I-am-ifeanyi/alems-c-engineering",
+    demo: "https://alemscengineering.com/",
   },
+
   {
     id: 1,
     name: "FlyT Movie HQ",
@@ -38,19 +38,6 @@ const info = [
 
   {
     id: 2,
-    name: "Nuel Concept",
-    description1:
-      "This is an Architecture website for a client, typically displays his methods, skills and some of his portfolios.",
-    description2: "Architecture, Construction and Designs",
-    image: nuelC,
-    stack1: "ReactJS",
-    stack2: "javaScript",
-    stack3: "Figma Design",
-    source: "https://github.com/I-am-ifeanyi/nuel-architecture.git",
-    demo: "https://genuine-caramel-3baf50.netlify.app/",
-  },
-  {
-    id: 3,
     name: "Weather App",
     description1:
       "A weather App that gives the current weather data of a selected location/city around the world. It also provides forcast for a  selected location/city at a 3 hourly interval. Particular attention was paid to the mobile view as that's what's obtainable from the Figma file.",
@@ -64,7 +51,7 @@ const info = [
   },
 
   {
-    id: 4,
+    id: 3,
     name: "All-Africa Medical & Wellness Expo",
     description1:
       " All-Africa Medical & Wellness Expo is a platform that brings together a large network of the World Finest Healthcare Service Providers",
@@ -76,8 +63,39 @@ const info = [
     source: "",
     demo: "http://amwe.com.ng",
   },
+
+
+  {
+    id: 4,
+    name: "Nuel Concept",
+    description1:
+      "This is an Architecture website for a client, typically displays his methods, skills and some of his portfolios.",
+    description2: "Architecture, Construction and Designs",
+    image: nuelC,
+    stack1: "ReactJS",
+    stack2: "javaScript",
+    stack3: "Figma Design",
+    source: "https://github.com/I-am-ifeanyi/nuel-architecture.git",
+    demo: "https://genuine-caramel-3baf50.netlify.app/",
+  },
+
   {
     id: 5,
+    name: "My Doings",
+    description1:
+      "Because we all have very different and important tasks to do, we do everything possible not to skip or forget any of them. We built this TODO app to help you list the things that are important to you and at what date and time you intend to do these things. Highly efficient tool. Importantly, it has a feature to translate your todos (doings) to any major language you can think of.",
+    description2:
+      "A different kind of TODO app, with language translate feature",
+    image: myDoings,
+    stack1: "ReactJS",
+    stack2: "TypeScript",
+    stack3: "REST API",
+    stack4: "Figma Design",
+    source: "https://github.com/I-am-ifeanyi/Todo-List-App",
+    demo: "https://mydoingsapp.netlify.app/#/",
+  },
+  {
+    id: 6,
     name: "The TypeTest",
     description1:
       "This is a typing game that demonstrates how fast you can type into the text area. You think you can type really fast? set your time with the plus (+) sign first, then hit the start button to proceed",
