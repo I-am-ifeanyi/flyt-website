@@ -1,16 +1,34 @@
 import React from "react";
 import { Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+
+import image1 from "../images/sliders/techpic.jpeg"
+import image2 from "../images/sliders/techpic2.webp"
+import image3 from "../images/sliders/Kelechi1.jpeg"
+import image4 from "../images/sliders/Kelechi2.jpeg"
+import image5 from "../images/sliders/Kelechi3.jpeg"
+
 
 const Sliders = () => {
   const images = [
-    "techpic.jpeg",
-    "Kelechi1.jpeg",
-    "techpic2.webp",
-    "Kelechi2.jpeg",
-    "techpic4.jpeg",
-    "Kelechi3.jpeg",
+    image1,
+    image5,
+    image2,
+    image3,
+    image4,
+    
+
   ];
+
+  if(!images) {
+    return (
+        <Box sx={{ display: 'flex' }}>
+      <CircularProgress />
+    </Box>
+    )
+  }
 
   return (
     <Zoom scale={0.7} arrows={false} indicators={false} duration={3000}>

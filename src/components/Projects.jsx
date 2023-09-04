@@ -18,7 +18,7 @@ const Projects = () => {
               </h2>
               <i className="">{project.description2}</i>
               <p className="mt-5">{project.description1}</p>
-              <div className="flex flex-col md:flex-row gap-2 justify-around font-bold rounded my-4 text-green-700 md:bg-gray-200 md:border-l-4 md:border-green-700">
+              <div className="flex flex-col md:flex-row flex-wrap gap-2 justify-around font-bold rounded my-4 text-green-700 md:bg-gray-200 md:border-l-4 md:border-green-700">
                 {" "}
                 <p
                   className={`bg-gray-200 border-l-4 border-green-700 pl-2 w-1/2 md:bg-none md:border-l-0 md:pl-0 md:w-auto md:border-transparent ${
@@ -47,6 +47,20 @@ const Projects = () => {
                   }`}
                 >
                   {project.stack4}
+                </p>
+                 <p
+                  className={`bg-gray-200 border-l-4 border-green-700 pl-2 w-1/2 md:bg-none md:border-l-0 md:pl-0 md:w-auto md:border-transparent ${
+                    project.stack5 ? "block" : "hidden"
+                  }`}
+                >
+                  {project.stack5}
+                </p>
+                 <p
+                  className={`bg-gray-200 border-l-4 border-green-700 pl-2 w-1/2 md:bg-none md:border-l-0 md:pl-0 md:w-auto md:border-transparent ${
+                    project.stack6 ? "block" : "hidden"
+                  }`}
+                >
+                  {project.stack6}
                 </p>
               </div>
               <div className="flex gap-20">
